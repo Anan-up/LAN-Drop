@@ -164,4 +164,4 @@ PORT=8080 npm start
 
 ## 许可证
 
-仅供局域网内部文件传输使用。
+[MIT](LICENSE)
