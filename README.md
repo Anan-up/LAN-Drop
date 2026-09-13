@@ -23,16 +23,16 @@ A pure-white, minimalist web-based file transfer tool. Files travel between brow
 
 ```
 ┌──────────────┐         WebSocket signaling (handshake only)      ┌──────────────┐
-│  Browser A    │  ─────────────────────────────────────────────▶  │  Signal srv   │
-│  (Sender)     │  ◀─────────────────────────────────────────────  │  (this proc)  │
+│  Browser A    │  ─────────────────────────────────────────────▶ │  Signal srv  │
+│  (Sender)     │  ◀───────────────────────────────────────────── │  (this proc) │
 └──────┬───────┘                                                   └──────┬───────┘
-       │                                                                │
-       │              WebRTC DataChannel (file bytes, direct)           │
-       └────────────────────────────────────────────────────────────────┘
+       │                                                                  │
+       │              WebRTC DataChannel (file bytes, direct)             │
+       └──────────────────────────────────────────────────────────────────┘
                                                                           │
 ┌──────────────┐                                                          ▼
-│  Browser B    │  ◀──────── WebRTC DataChannel (file bytes, direct) ──────┘
-│  (Receiver)   │
+│  Browser B   │  ◀──────── WebRTC DataChannel (file bytes, direct) ────┘
+│  (Receiver)  │
 └──────────────┘
 ```
 
