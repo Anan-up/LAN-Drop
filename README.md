@@ -31,7 +31,7 @@ A pure-white, minimalist web-based file transfer tool. Files travel between brow
        └──────────────────────────────────────────────────────────────────┘
                                                                           │
 ┌──────────────┐                                                          ▼
-│  Browser B   │  ◀──────── WebRTC DataChannel (file bytes, direct) ────┘
+│  Browser B   │  ◀──────── WebRTC DataChannel (file bytes, direct) ─────┘
 │  (Receiver)  │
 └──────────────┘
 ```
