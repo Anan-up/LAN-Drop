@@ -1,3 +1,5 @@
+[English](README.md) | [简体中文](README_Simplified_Chinese.md) | [繁體中文](README_Classical_Chinese.md)
+
 # 局域网 P2P 文件传输
 
 纯白极简的网页文件传输工具。文件在浏览器之间通过 **WebRTC 点对点直连**传输，**完全不经过服务器中转**——服务器只负责托管页面和撮合连接（WebSocket 信令）。适合在同一局域网内把文件从一台设备直接发到另一台，不经过任何第三方服务器。
