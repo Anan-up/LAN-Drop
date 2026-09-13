@@ -1,0 +1,15 @@
+{
+  "name": "lan-file-transfer",
+  "version": "1.0.0",
+  "private": true,
+  "description": "局域网 P2P 文件传输 — WebRTC 直连，文件不经过服务器中转",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "qrcode-generator": "^2.0.4",
+    "ws": "^8.18.0"
+  }
+}

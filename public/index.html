@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="data:,">
+  <title>局域网文件传输</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <header class="head">
+      <h1>局域网文件传输</h1>
+      <p class="sub">点对点直连 · 文件不经过服务器</p>
+    </header>
+
+    <!-- 加入房间 -->
+    <section class="join" id="joinSection">
+      <div class="row">
+        <input id="roomInput" class="room-input" type="text" placeholder="输入房间码，例如 8848" autocomplete="off" maxlength="24">
+        <button id="randomBtn" class="ghost" title="随机生成一个房间码">随机</button>
+        <button id="joinBtn" class="primary">加入</button>
+      </div>
+      <div class="qr-action">
+        <button id="qrBtn" class="ghost" title="生成房间二维码，对方扫码即可加入">生成二维码邀请</button>
+      </div>
+      <p class="hint">两台设备打开同一页面、输入<strong>相同房间码</strong>即可互传文件。也可点「生成二维码邀请」让对方扫码加入。</p>
+      <div class="qr-box" id="qrBox" hidden>
+        <div class="qr-img" id="qrImg"></div>
+        <p class="qr-url" id="qrUrl"></p>
+        <button class="ghost" id="qrClose">关闭</button>
+      </div>
+    </section>
+
+    <!-- 连接状态 -->
+    <div class="status" id="status">
+      <span class="dot" id="statusDot"></span>
+      <span id="statusText">未连接</span>
+    </div>
+
+    <!-- 传输区 -->
+    <section class="transfer" id="transferSection" hidden>
+      <div class="dropzone" id="dropzone">
+        <p>把文件拖到这里，或 <label class="link">点击选择<input id="fileInput" type="file" multiple hidden></label></p>
+        <span class="dz-sub">支持多文件 · 双向互传</span>
+      </div>
+      <div class="lists" id="lists"></div>
+    </section>
+
+    <button class="leave" id="leaveBtn" hidden>离开房间</button>
+  </main>
+
+  <script src="vendor/qrcode.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
