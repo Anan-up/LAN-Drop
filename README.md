@@ -163,7 +163,7 @@ Issues found and fixed during testing: After connecting, the "QR" button was "vi
 > Note: To eliminate interference from the "gesture save dialog" in automation, the tests force the Blob fallback path to verify **data-plane** correctness; streaming to disk (File System Access) and the "gesture save dialog" interaction still need manual verification in a real browser that supports the API.
 
 The 3 new edge fixes this round (① `file-done` lost in the disconnect window, ② disconnect jitter clearing the completed list, ③ same-id retry duplicate entry) are all long-tail scenarios at the level of "the connection drops exactly at some await / the user happens to click retry", hard to reproduce with stable E2E (automatically triggering "file-done happens to throw on `send` exactly when the DataChannel closes" would be very flaky). Therefore this round relies on **precise logic review + `node --check` syntax validation + full regression of existing E2E still with zero console errors**: all changes are local branch adjustments that don't touch the verified main chain (perfect negotiation, backpressure, streaming to disk, resume, reject, retry, CSP, rate limiting), so the existing P0/A/B/C and P1 behavior is unaffected.
-
+![项目截图](Lan-Drop.png)
 ## License
 
 [MIT](LICENSE)
